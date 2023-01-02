@@ -15,9 +15,14 @@ struct TimePicker: View {
         ZStack{
             Color.gray.opacity(0.4).edgesIgnoringSafeArea(.all)
             VStack{
-                Text("Select Time ⏰")
-                    .font(.title2)
-                    .padding([.top], 32)
+                if #available(OSX 11.0, *) {
+                    Text("Select Time ⏰")
+                        .font(.title2)
+                        .padding([.top], 32)
+                } else {
+                    EmptyView()
+//                   "doesn't available for this version"
+                }
                 HStack {
                     Picker(selection: self.$hourSelection, label: Text("")){
                         ForEach(0..<self.hours.count) { index in
@@ -26,7 +31,7 @@ struct TimePicker: View {
                                 .padding()
                         }
                     }
-                    .pickerStyle(WheelPickerStyle())
+//                    .pickerStyle(WheelPickerStyle())
                     .frame(width: 50, height: 100, alignment: .center)
                     .clipped()
                     .padding(.horizontal)
@@ -38,7 +43,7 @@ struct TimePicker: View {
                                 .padding()
                         }
                     }
-                    .pickerStyle(WheelPickerStyle())
+//                    .pickerStyle(WheelPickerStyle())
                     .frame(width: 50, height: 100, alignment: .center)
                     .clipped()
                     .padding(.horizontal)
@@ -50,7 +55,7 @@ struct TimePicker: View {
                                 .padding()
                         }
                     }
-                    .pickerStyle(WheelPickerStyle())
+//                    .pickerStyle(WheelPickerStyle())
                     .frame(width: 50, height: 100, alignment: .center)
                     .clipped()
                     .padding(.horizontal)
