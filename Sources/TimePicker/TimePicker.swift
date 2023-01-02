@@ -68,7 +68,7 @@ struct TimePicker: View {
                 Button(action: {
                         bottomSheet = false
                 }, label: {
-                    Text("Update")
+                    Text("NewTime")
                         .font(.system(size: 22))
                         .bold()
                         .foregroundColor(.white)
