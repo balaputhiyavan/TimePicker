@@ -19,6 +19,9 @@ struct TimePicker: View {
                     Text("Select Time ⏰")
                         .font(.title2)
                         .padding([.top], 32)
+                    Text("Hello Bala")
+                        .font(.title2)
+                        .padding([.top], 32)
                 } else {
                     EmptyView()
 //                   "doesn't available for this version"
